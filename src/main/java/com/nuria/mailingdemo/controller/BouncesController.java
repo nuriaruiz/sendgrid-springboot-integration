@@ -21,9 +21,8 @@ public class BouncesController {
     SendGridEmailServiceInterface sendGridEmailService;
 
     @PostMapping("/bouncedmail")
-    void newEmployee(@RequestBody BouncedMail bouncedMail) {
+    void newBouncedMail(@RequestBody BouncedMail bouncedMail) {
         try {
-            // Get string date from timestamp
             Timestamp ts = new Timestamp(Long.valueOf(bouncedMail.getTimestamp()));
             sendGridEmailService.sendHTML("nuria.ruiz@gmail.com", "nuria.ruiz@gmail.com", "Bounced mail", "Hello, <strong>" + bouncedMail.getEmail() + "</strong> has been bounced. " +
                     "" + bouncedMail.getReason() + ". " + ts.toString());
