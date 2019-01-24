@@ -23,3 +23,6 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+# Google App Engine generated folder
+appengine-generated/
