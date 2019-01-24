@@ -19,12 +19,7 @@ public class SendGridEmailService implements EmailService {
     public SendGridEmailService(SendGrid sendGridClient) {
         this.sendGridClient = sendGridClient;
     }
-    @Override
-    public void sendText(String from, String to, String subject, String body) throws IOException {
-        Response response = sendEmail(from, to, subject, new Content("text/plain", body));
-        LOG.info("Status Code: " + response.getStatusCode() + ", Body: " + response.getBody() + ", Headers: "
-                + response.getHeaders());
-    }
+
     @Override
     public void sendHTML(String from, String to, String subject, String body) throws IOException {
         Response response = sendEmail(from, to, subject, new Content("text/html", body));
