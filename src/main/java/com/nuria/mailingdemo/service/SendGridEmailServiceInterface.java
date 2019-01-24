@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class SendGridEmailService implements EmailService {
+public class SendGridEmailServiceInterface implements EmailServiceInterface {
 
-    private static final Log LOG = LogFactory.getLog(SendGridEmailService.class);
+    private static final Log LOG = LogFactory.getLog(SendGridEmailServiceInterface.class);
 
     private SendGrid sendGridClient;
 
     @Autowired
-    public SendGridEmailService(SendGrid sendGridClient) {
+    public SendGridEmailServiceInterface(SendGrid sendGridClient) {
         this.sendGridClient = sendGridClient;
     }
 

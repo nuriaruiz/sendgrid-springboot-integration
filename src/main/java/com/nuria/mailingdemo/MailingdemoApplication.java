@@ -1,6 +1,6 @@
 package com.nuria.mailingdemo;
 
-import com.nuria.mailingdemo.service.SendGridEmailService;
+import com.nuria.mailingdemo.service.SendGridEmailServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MailingdemoApplication implements CommandLineRunner {
 
 	@Autowired
-	SendGridEmailService sendGridEmailService;
+	SendGridEmailServiceInterface sendGridEmailService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MailingdemoApplication.class, args);

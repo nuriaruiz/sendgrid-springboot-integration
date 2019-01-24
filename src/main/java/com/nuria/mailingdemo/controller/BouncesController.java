@@ -1,7 +1,7 @@
 package com.nuria.mailingdemo.controller;
 
 import com.nuria.mailingdemo.model.BouncedMail;
-import com.nuria.mailingdemo.service.SendGridEmailService;
+import com.nuria.mailingdemo.service.SendGridEmailServiceInterface;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class BouncesController {
 
     private static final Log LOG = LogFactory.getLog(BouncesController.class);
     @Autowired
-    SendGridEmailService sendGridEmailService;
+    SendGridEmailServiceInterface sendGridEmailService;
 
     @PostMapping("/bouncedmail")
     void newEmployee(@RequestBody BouncedMail bouncedMail) {
